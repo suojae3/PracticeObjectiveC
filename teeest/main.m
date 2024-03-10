@@ -9,7 +9,7 @@ int main(int argc, const char * argv[]) {
         Vehicle *hello = [[Vehicle alloc] init];
         
         [hello setWheels:3 setSeats:3];
-
+        
         if (hello.wheels == 4) {
             NSLog(@"wheels : 4");
         } else if(hello.wheels == 3) {
@@ -29,7 +29,18 @@ int main(int argc, const char * argv[]) {
                 NSLog(@"No Seats");
                 break;
         }
+        
+        for (int i=0; i<hello.wheels; i++) {
+            NSLog(@"WheelsAdd: %i", i);
+        }
     
+        int i=0;
+        while (i<hello.seats) {
+            NSLog(@"seatsAdd: %i", i);
+            i++;
+        }
+        
+        
         hello.wheels = 2;
         hello.seats = 9;
         
