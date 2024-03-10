@@ -45,6 +45,14 @@ int main(int argc, const char * argv[]) {
         hello.seats = 9;
         
         NSLog(@"wheels: %i, seats: %i", hello.wheels, hello.seats);
+        
+        // NSMutableString처럼 Mutable이 들어가 있으면 바꿀 수 있음
+//        NSString *str = [[NSString alloc] initWithString:@"This is NSString"];
+        NSString *str = @"This is NSString";
+        
+        // Conveninece method -> 동적할당하면서 초기화까지
+        NSLog(@"str : %@", str);
+
     }
     return 0;
 }
