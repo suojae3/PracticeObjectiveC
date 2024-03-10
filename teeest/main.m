@@ -53,6 +53,17 @@ int main(int argc, const char * argv[]) {
         // Conveninece method -> 동적할당하면서 초기화까지
         NSLog(@"str : %@", str);
 
+        // NSString은 immutable 클래스라 수정할 수 없음 통째로 재할당만 가능
+        NSString *result;
+        result = [str substringFromIndex:6];
+        result = [str substringToIndex:3];
+        
+        result = [[str substringToIndex:11]substringFromIndex:8];
+        result = [[str substringFromIndex:8]substringToIndex:3];
+        
+        result = [[str substringWithRange:NSMakeRange(8, 3)]lowercaseString];
+        
+        NSLog(@"result : %@", result);
     }
     return 0;
 }
