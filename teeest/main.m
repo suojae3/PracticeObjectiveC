@@ -62,8 +62,14 @@ int main(int argc, const char * argv[]) {
         result = [[str substringFromIndex:8]substringToIndex:3];
         
         result = [[str substringWithRange:NSMakeRange(8, 3)]lowercaseString];
-        
         NSLog(@"result : %@", result);
+        
+        NSMutableString *mstr = [NSMutableString stringWithString:str];
+        [mstr appendString:@"and NSMutableString"];
+        [mstr insertString:@"Mutable" atIndex:1];
+                    
+        NSLog(@"mstr: %@", mstr);
+        
     }
     return 0;
 }
