@@ -3,14 +3,13 @@
 
 @implementation Vehicle
 @synthesize wheels;
-//@synthesize seats;
+@synthesize seats;
 
-//-(void)setWheels: (int)w {
-//    wheels= w;
-//}
-//-(void)setSeats: (int)s {
-//    seats= s;
-//}
+
+-(void)setWheels:(int)w setSeats:(int)s {
+    self.wheels = w;
+    self.seats = s;
+}
 
 -(int)wheels {
     return wheels;

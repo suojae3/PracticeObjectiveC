@@ -6,21 +6,33 @@
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
+        Vehicle *hello = [[Vehicle alloc] init];
         
-        //Vehicle *hello = [Vehicle new];
-        //new -> 관례적으로 안씀 보통 alloc(동적할당) init(초기화) 메서드 체이닝으로 자주씀
-        Vehicle *hello = [[Vehicle alloc] init]; // Create Instance Object
+        [hello setWheels:3 setSeats:3];
+
+        if (hello.wheels == 4) {
+            NSLog(@"wheels : 4");
+        } else if(hello.wheels == 3) {
+            NSLog(@"wheels : 3");
+        } else {
+            NSLog(@"No Wheels");
+        }
         
-        //[Receiver Message]
+        switch (hello.seats) {
+            case 4:
+                NSLog(@"wheels : 4");
+                break;
+            case 3:
+                NSLog(@"wheels : 2");
+                break;
+            default:
+                NSLog(@"No Seats");
+                break;
+        }
+    
+        hello.wheels = 2;
+        hello.seats = 9;
         
-        [hello setWheels:5];
-        [hello setSeats:3];
-        [hello drawCircleXYR:1 :2 :3];
-        [hello drawCircleX:4 Y:5 R:6];
-        hello.wheels = 4;
-//        hello.seats = 2;
-        
-        //[hello print];
         NSLog(@"wheels: %i, seats: %i", hello.wheels, hello.seats);
     }
     return 0;
