@@ -18,14 +18,20 @@ SomeClass *object = [[SomeClass alloc] init];
     int seats2;
 }
 
--(void)setWheels: (int)w;
--(void)setSeats: (int)s;
--(int)wheels;
--(int)seats;
+//member method -> GetterSetter를 자동적으로 만들어주어 노가다성 코딩 방지
+@property int wheels;
+@property int seats;
+
+//-(void)setWheels: (int)w;
+//-(void)setSeats: (int)s;
+//-(int)wheels;
+//-(int)seats;
 -(void)print;
 @end
 
 @implementation Vehicle
+@synthesize  wheels;
+@synthesize seats;
 
 -(void)setWheels: (int)w {
     wheels2 = w;
